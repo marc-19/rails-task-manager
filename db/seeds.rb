@@ -7,3 +7,16 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Task.destroy_all
+
+names = ["play", "shower", "music", "garden", "school"]
+boolean = [true, false]
+
+10.times do
+  Task.create(
+    title: names.sample,
+    details: Faker::Quotes::Chiquito.joke,
+    completed: boolean.sample
+  )
+end
